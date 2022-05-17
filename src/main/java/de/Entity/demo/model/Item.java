@@ -14,7 +14,9 @@ public class Item {
     private long id;
     /*
         Beziehung zwischen Item und Order
-        Viele zu viele beziehung
+        Viele zu viele Beziehung
+        Ein Item kann in beliebig vielen Bestellungen enthalten sein,
+        eine Bestellung kann viele Items enthalten.
      */
     @JsonIgnore
     @ManyToMany(mappedBy = "enrolledItems")

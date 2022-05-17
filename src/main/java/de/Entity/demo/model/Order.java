@@ -14,7 +14,9 @@ public class Order {
     private long id;
     /*
         Beziehung zwischen Order und Item
-        Viele zu viele beziehung
+        Viele zu viele Beziehung
+        Ein Item kann in beliebig vielen Bestellungen enthalten sein,
+        eine Bestellung kann viele Items enthalten.
      */
     @ManyToMany
     @JoinTable( name = "item_enrolled",
@@ -25,7 +27,7 @@ public class Order {
 
     /*
         Beziehung zwischen Order und Customer
-        Ein Customer kann viele Order enthalten.
+        Viele Order können einen Customer enthalten
      */
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id",referencedColumnName = "id")
