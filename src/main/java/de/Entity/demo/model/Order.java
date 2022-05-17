@@ -54,4 +54,8 @@ public class Order {
     public void enrollItem(Item item) {
         enrolledItems.add(item);
     }
+    //Methode um einen Customer hinzuzufügen
+    public void assignCustomer(Customer customer) {
+        this.customer = customer;
+    }
 }
