@@ -12,13 +12,12 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-
     /*
         Beziehung zwischen Customer und Order
         Ein Customer kann viele Order enthalten
     */
     @JsonIgnore
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     private Set<Order> orders = new HashSet<>();
 
     private String firstName;

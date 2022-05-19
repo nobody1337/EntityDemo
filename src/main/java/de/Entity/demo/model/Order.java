@@ -24,12 +24,11 @@ public class Order {
                 inverseJoinColumns = @JoinColumn(name = "item_id")
               )
     private Set<Item> enrolledItems = new HashSet<>();
-
     /*
         Beziehung zwischen Order und Customer
         Viele Order können einen Customer enthalten
      */
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "customer_id",referencedColumnName = "id")
     private Customer customer;
 
